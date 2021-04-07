@@ -9,6 +9,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     int jumpForce = 5;
     Rigidbody2D rigidbody2D;
+    bool isGrounded;
+
     // Start is called before the first frame update
     void Start()
     {
