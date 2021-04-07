@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerPossess : MonoBehaviour
 {
     bool InPossessRange = false;
+    GameObject possessionTarget;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +26,16 @@ public class PlayerPossess : MonoBehaviour
         {
             Possess();
         }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            gameObject.GetComponent<SpriteRenderer>().enabled = true;
+            gameObject.GetComponent<PlayerMovement>().enabled = true;
+            gameObject.GetComponent<Rigidbody2D>().isKinematic = false;
+            gameObject.GetComponent<CircleCollider2D>().enabled = true;
+            Destroy(possessionTarget.GetComponent<PlayerMovement>());
+            gameObject.transform.parent = null;
+                        
+        }
     }
 
     void Possess()
@@ -34,7 +45,13 @@ public class PlayerPossess : MonoBehaviour
             //possess robot
             print("robot");
             //turn off player
+            gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            gameObject.GetComponent<PlayerMovement>().enabled = false;
+            gameObject.GetComponent<Rigidbody2D>().isKinematic = true;
+            gameObject.GetComponent<CircleCollider2D>().enabled = false;            
+            gameObject.transform.parent = possessionTarget.transform;
             //add player movement script to robot
+            possessionTarget.AddComponent<PlayerMovement>();
         }
 
         if (/*wire*/true)
@@ -48,6 +65,7 @@ public class PlayerPossess : MonoBehaviour
         if (collision.gameObject.tag == "Robot")
         {
             InPossessRange = true;
+            possessionTarget = collision.gameObject;
         }
     }
 
@@ -56,6 +74,7 @@ public class PlayerPossess : MonoBehaviour
            if(collision.gameObject.tag == "Robot")
         {
             InPossessRange = false;
+            //possessionTarget = null;
         }
     }
 }
