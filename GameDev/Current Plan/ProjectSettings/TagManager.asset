@@ -6,6 +6,11 @@ TagManager:
   tags:
   - Ground
   - Robot
+  - p1
+  - p2
+  - p3
+  - p4
+  - p5
   layers:
   - Default
   - TransparentFX
