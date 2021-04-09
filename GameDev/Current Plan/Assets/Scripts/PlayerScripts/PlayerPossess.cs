@@ -6,6 +6,7 @@ public class PlayerPossess : MonoBehaviour
 {
     bool InPossessRange = false;
     GameObject possessionTarget;
+    Transform originalRotation;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,7 +33,10 @@ public class PlayerPossess : MonoBehaviour
             gameObject.GetComponent<PlayerMovement>().enabled = true;
             gameObject.GetComponent<Rigidbody2D>().isKinematic = false;
             gameObject.GetComponent<CircleCollider2D>().enabled = true;
+            //gameObject.transform.rotation = zero ;
             Destroy(possessionTarget.GetComponent<PlayerMovement>());
+            possessionTarget.GetComponent<Enemyai>().enabled = true;
+            possessionTarget.transform.rotation = originalRotation.rotation;
             gameObject.transform.parent = null;
                         
         }
@@ -48,10 +52,17 @@ public class PlayerPossess : MonoBehaviour
             gameObject.GetComponent<SpriteRenderer>().enabled = false;
             gameObject.GetComponent<PlayerMovement>().enabled = false;
             gameObject.GetComponent<Rigidbody2D>().isKinematic = true;
-            gameObject.GetComponent<CircleCollider2D>().enabled = false;            
+            gameObject.GetComponent<CircleCollider2D>().enabled = false;
+
+            
             gameObject.transform.parent = possessionTarget.transform;
+            originalRotation.rotation = possessionTarget.transform.rotation;
+            possessionTarget.transform.rotation = gameObject.transform.rotation;
+            
+
             //add player movement script to robot
             possessionTarget.AddComponent<PlayerMovement>();
+            possessionTarget.GetComponent<Enemyai>().enabled = false;
         }
 
         if (/*wire*/true)
@@ -66,6 +77,7 @@ public class PlayerPossess : MonoBehaviour
         {
             InPossessRange = true;
             possessionTarget = collision.gameObject;
+            originalRotation = possessionTarget.transform;
         }
     }
 
