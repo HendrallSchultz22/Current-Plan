@@ -34,9 +34,13 @@ public class PlayerPossess : MonoBehaviour
             gameObject.GetComponent<Rigidbody2D>().isKinematic = false;
             gameObject.GetComponent<CircleCollider2D>().enabled = true;
             //gameObject.transform.rotation = zero ;
-            Destroy(possessionTarget.GetComponent<PlayerMovement>());
-            possessionTarget.GetComponent<Enemyai>().enabled = true;
-            possessionTarget.transform.rotation = originalRotation.rotation;
+            if(possessionTarget.tag == "Robot")
+            {
+                Destroy(possessionTarget.GetComponent<PlayerMovement>());
+                possessionTarget.GetComponent<Enemyai>().enabled = true;
+                possessionTarget.transform.rotation = originalRotation.rotation;
+            }
+            
             gameObject.transform.parent = null;
                         
         }
@@ -44,7 +48,7 @@ public class PlayerPossess : MonoBehaviour
 
     void Possess()
     {
-        if(InPossessRange)
+        if(InPossessRange && possessionTarget.tag == "Robot")
         {
             //possess robot
             print("robot");
@@ -65,9 +69,18 @@ public class PlayerPossess : MonoBehaviour
             possessionTarget.GetComponent<Enemyai>().enabled = false;
         }
 
-        if (/*wire*/true)
+        if (/*wire*/InPossessRange && possessionTarget.tag == "Wire") 
         {
             // possess Wire
+            print("wire");
+            //*turn off player
+            gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            gameObject.GetComponent<PlayerMovement>().enabled = false;
+            gameObject.GetComponent<Rigidbody2D>().isKinematic = true;
+            gameObject.GetComponent<CircleCollider2D>().enabled = false;
+            possessionTarget.gameObject.transform.GetChild(0).gameObject.SetActive(true); // activates wire ball
+            gameObject.transform.parent = possessionTarget.gameObject.transform.GetChild(0);
+
         }
     }
 
@@ -78,6 +91,12 @@ public class PlayerPossess : MonoBehaviour
             InPossessRange = true;
             possessionTarget = collision.gameObject;
             originalRotation = possessionTarget.transform;
+        }
+
+        if(collision.gameObject.tag == "Wire")
+        {
+            InPossessRange = true;
+            possessionTarget = collision.gameObject; //gets the inWire object 
         }
     }
 
