@@ -13,7 +13,7 @@ public class PursueStateBehaviour : StateMachineBehaviour
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         Enemyai enemyai = animator.gameObject.GetComponent<Enemyai>();
-        enemyai.StartPursuit();
+        enemyai.StopPursuit();
     }
 
 }
