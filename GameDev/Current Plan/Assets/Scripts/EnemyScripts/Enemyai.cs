@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Enemyai : MonoBehaviour
 {
-    private Transform target;
+    
+    [SerializeField] private Transform target;
     private PlayerMovement player;
 
     public bool PlayerLives;
@@ -93,7 +94,10 @@ public class Enemyai : MonoBehaviour
     }
     public void Pursue()
     {
-        direction = target.position - transform.position;
+        if (PlayerLives)
+        {
+            direction = target.position - transform.position;
+        }
         rotateRobot();
     }
     public void StopPursuit()

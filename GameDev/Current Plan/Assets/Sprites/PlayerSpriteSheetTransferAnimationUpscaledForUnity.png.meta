@@ -4,34 +4,31 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: -4232319996255035742
-    second: Possesion1
+    second: Possess1
   - first:
       213: 1552731307112036554
-    second: Possesion4
+    second: Possess4
   - first:
       213: 4364395761524061591
-    second: Possesion2
+    second: Possess2
   - first:
       213: 2961524497256919362
-    second: Possesion9
+    second: Possess9
   - first:
       213: 6681203511159002491
-    second: Possesion3
+    second: Possess3
   - first:
       213: 183059120066257216
-    second: Possesion5
+    second: Possess5
   - first:
       213: 1087157554619171028
-    second: Possesion6
+    second: Possess6
   - first:
       213: -4270755854505832960
-    second: PlayerSpriteSheetTransferAnimationUpscaledForUnity_9
+    second: Possess7
   - first:
       213: -7536642280736958416
-    second: Possesion8
-  - first:
-      213: -4127256752994672406
-    second: Possesion7
+    second: Possess8
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -181,15 +178,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Possesion1
+      name: Possess1
       rect:
         serializedVersion: 2
-        x: 56
-        y: 17
-        width: 117
-        height: 118
+        x: 58
+        y: 19
+        width: 115
+        height: 109
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -202,15 +199,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Possesion4
+      name: Possess4
       rect:
         serializedVersion: 2
-        x: 510
-        y: 42
-        width: 125
-        height: 69
+        x: 512
+        y: 47
+        width: 122
+        height: 59
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -223,15 +220,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Possesion2
+      name: Possess2
       rect:
         serializedVersion: 2
-        x: 200
-        y: 18
-        width: 132
-        height: 118
+        x: 207
+        y: 27
+        width: 117
+        height: 99
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -244,16 +241,16 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Possesion9
+      name: Possess9
       rect:
         serializedVersion: 2
-        x: 1303
-        y: 56
-        width: 58
-        height: 40
+        x: 1320
+        y: 67
+        width: 34
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 1, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -265,15 +262,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Possesion3
+      name: Possess3
       rect:
         serializedVersion: 2
-        x: 353
-        y: 32
-        width: 133
-        height: 92
+        x: 360
+        y: 36
+        width: 117
+        height: 81
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -286,15 +283,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Possesion5
+      name: Possess5
       rect:
         serializedVersion: 2
-        x: 664
-        y: 49
-        width: 124
-        height: 55
+        x: 666
+        y: 54
+        width: 117
+        height: 45
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -307,15 +304,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Possesion6
+      name: Possess6
       rect:
         serializedVersion: 2
-        x: 808
-        y: 46
-        width: 138
-        height: 56
+        x: 819
+        y: 63
+        width: 117
+        height: 27
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -328,7 +325,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSpriteSheetTransferAnimationUpscaledForUnity_9
+      name: Possess7
       rect:
         serializedVersion: 2
         x: 972
@@ -336,7 +333,7 @@ TextureImporter:
         width: 117
         height: 9
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -349,15 +346,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Possesion8
+      name: Possess8
       rect:
         serializedVersion: 2
-        x: 1135
-        y: 53
-        width: 102
-        height: 46
+        x: 1146
+        y: 68
+        width: 82
+        height: 17
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -365,27 +362,6 @@ TextureImporter:
       bones: []
       spriteID: 038db79c6c7786790800000000000000
       internalID: -7536642280736958416
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Possesion7
-      rect:
-        serializedVersion: 2
-        x: 959
-        y: 54
-        width: 145
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ae0abeca9d909b6c0800000000000000
-      internalID: -4127256752994672406
       vertices: []
       indices: 
       edges: []

@@ -14,7 +14,6 @@ public class FollowCamera : MonoBehaviour
     }
     void LateUpdate()
     {
-        transform.position = new Vector3(player.transform.position.x, player.transform.position.y, transform.position.z);
         if (controller.IsAlive)
         {
             transform.position = new Vector3(player.transform.position.x, player.transform.position.y, transform.position.z);
