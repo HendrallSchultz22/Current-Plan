@@ -106,8 +106,8 @@ public class Enemyai : MonoBehaviour
     }
     private void rotateRobot()
     {
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle - 90));
+        //float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        //transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle - 90));
         direction = direction.normalized;
     }
     public void StartPursuit()

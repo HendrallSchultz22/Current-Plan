@@ -46,9 +46,11 @@ public class PlayerPossess : MonoBehaviour
                 possessionTarget.transform.rotation = gameObject.transform.rotation;
 
                 //add player movement script to robot
+                possessionTarget.AddComponent<PlayerPossessEnemy>();
                 possessionTarget.AddComponent<PlayerMovement>();
                 possessionTarget.GetComponent<Enemyai>().enabled = false;
                 InPossessRange = false;
+                EngagePossess = false;
             }
             if (InPossessRange && possessionTarget.tag == "Wire")
             {
@@ -61,6 +63,8 @@ public class PlayerPossess : MonoBehaviour
                 gameObject.GetComponent<CircleCollider2D>().enabled = false;
                 possessionTarget.gameObject.transform.GetChild(0).gameObject.SetActive(true); // activates wire ball
                 gameObject.transform.parent = possessionTarget.gameObject.transform.GetChild(0);
+                InPossessRange = false;
+                EngagePossess = false;
             }
         }
         
@@ -74,12 +78,20 @@ public class PlayerPossess : MonoBehaviour
         //gameObject.transform.rotation = zero ;
         if (possessionTarget.tag == "Robot")
         {
+            Destroy(possessionTarget.GetComponent<PlayerPossessEnemy>());
             Destroy(possessionTarget.GetComponent<PlayerMovement>());
             possessionTarget.GetComponent<Enemyai>().enabled = true;
             possessionTarget.transform.rotation = originalRotation;
         }
 
         gameObject.transform.parent = null;
+    }
+    public void PossessObserver(string message)
+    {
+        if (message.Equals("PossesAnimationEnded"))
+        {
+            Possess();
+        }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -95,17 +107,17 @@ public class PlayerPossess : MonoBehaviour
             possessionTarget = collision.gameObject; //gets the inWire object 
         }
     }
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Robot")
-        {
-            InPossessRange = false;
-            possessionTarget = null;
-        }
-        if (collision.gameObject.tag == "Wire")
-        {
-            InPossessRange = false;
-            possessionTarget = null;
-        }
-    }
+    //private void OnCollisionExit2D(Collision2D collision)
+    //{
+    //    if (collision.gameObject.tag == "Robot")
+    //    {
+    //        InPossessRange = false;
+    //        possessionTarget = null;
+    //    }
+    //    if (collision.gameObject.tag == "Wire")
+    //    {
+    //        InPossessRange = false;
+    //        possessionTarget = null;
+    //    }
+    //}
 }

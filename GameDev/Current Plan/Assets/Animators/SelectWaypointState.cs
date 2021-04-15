@@ -6,7 +6,7 @@ public class SelectWaypointState : StateMachineBehaviour
 {
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        Enemyai enemyai = animator.gameObject.GetComponent<Enemyai>();
+        Enemyai enemyai = animator.gameObject.GetComponentInParent<Enemyai>();
         enemyai.SetNextPoint();
     }
 }
